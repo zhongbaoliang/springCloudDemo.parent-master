@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springCloud.zuul" />
+        <module name="demo.webAPI" />
+        <module name="registry" />
+        <module name="demo.webUI" />
+        <module name="webui" />
+        <module name="springCloud.geteway" />
+        <module name="springCloud.config" />
+        <module name="webapi" />
+        <module name="zuul" />
+        <module name="config" />
+        <module name="geteway" />
+        <module name="springCloud.registry" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo.webui" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config" options="-parameters" />
+      <module name="demo.webAPI" options="-parameters" />
+      <module name="demo.webUI" options="-parameters" />
+      <module name="demo.webui" options="-parameters" />
+      <module name="geteway" options="-parameters" />
+      <module name="registry" options="-parameters" />
+      <module name="springCloud.config" options="-parameters" />
+      <module name="springCloud.geteway" options="-parameters" />
+      <module name="springCloud.registry" options="-parameters" />
+      <module name="springCloud.zuul" options="-parameters" />
+      <module name="webapi" options="-parameters" />
+      <module name="webui" options="-parameters" />
+      <module name="zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

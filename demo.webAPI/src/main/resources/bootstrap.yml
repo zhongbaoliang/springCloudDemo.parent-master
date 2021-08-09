@@ -1,0 +1,12 @@
+spring:
+    http:
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+    cloud:
+        config:
+            uri: http://${host:localhost}:809   #配置中心的地址
+            name: config
+            profile: ${active:dev} 
+         

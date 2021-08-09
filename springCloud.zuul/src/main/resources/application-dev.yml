@@ -1,0 +1,18 @@
+#超时重试
+ribbon:
+    ReadTimeout: 300000 # 单位ms 调试时间5分钟
+    ConnectTimeout: 60000 # 单位ms 
+    MaxAutoRetries: 1
+    MaxAutoRetriesNextServer: 1
+
+#超时熔断回调
+hystrix:
+   command:
+       default:
+          execution:
+             timeout:
+                  enabled: true
+             isolation:
+                 thread:
+                    timeoutInMilliseconds: 900000(300000*3) #(默认是1秒）
+

@@ -1,0 +1,32 @@
+server:
+  port: 801
+
+spring:
+  application:
+    name: springCloud.geteway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+# 不配置routes，则默认使用服务名 ,getway不配置也可以使用spring.application.name访问  ,zuul中网路由一定配置否则访问不了
+      routes:
+        - id: webui
+          uri: lb://webui
+          predicates:
+          - Path=/getwayWebui/**
+          filters:
+          - StripPrefix=1
+        #以下测试用的:
+        - id: service2
+          uri: https://www.www.com/
+          predicates:
+          - Path=/baidu/**
+          filters:
+          - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${registry.url}

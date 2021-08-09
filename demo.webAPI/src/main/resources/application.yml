@@ -1,0 +1,18 @@
+spring:
+   application:
+       name: webapi
+
+server:
+   port: 806 #微服务webapi的端口
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${registry.url}  #从配置中心读取配置
+    registry-fetch-interval-seconds: 5 # 拉取服务注册信息间隔时间 (默认为30秒)
+  instance:
+    lease-expiration-duration-in-seconds: 60
+    lease-renewal-interval-in-seconds: 30
+    preferIpAddress: true
+    instanceId: ${spring.cloud.client.ip-address}:${server.port}
+
